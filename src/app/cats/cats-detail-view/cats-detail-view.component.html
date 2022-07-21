@@ -6,10 +6,12 @@
       <span>{{cat.ageMonths}} miesięcy</span>
       <span>{{cat.breed}}</span>
       <div class="vaccinated-container">
-        <span>Vaccinated</span>
-        <img *ngIf="cat.vaccinated" src="../../../assets/icons/tick.jpg">
-        <img *ngIf="!cat.vaccinated" src="../../../assets/icons/cross.jpg">
+        <span>Vaccinated: </span>
+        <img alt="" *ngIf="cat.vaccinated" src="../../../assets/icons/tick.jpg">
+        <img alt="" *ngIf="!cat.vaccinated" src="../../../assets/icons/cross.jpg">
       </div>
+      <span *ngIf="cat.reserved">Reserved</span>
+      <span *ngIf="!cat.reserved">Free</span>
     </div>
   </div>
 

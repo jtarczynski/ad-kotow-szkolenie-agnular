@@ -14,38 +14,47 @@ export class CatsDataService {
       ageMonths: 8,
       breed: 'maine coon',
       picUrl: 'puszek1.jpg',
-      vaccinated: false
+      vaccinated: false,
+      reserved: false,
+      funFact: "Likes to catch mice"
     },
     {
       name: 'Mruczek',
       ageMonths: 36,
       breed: 'brytyjczyk',
       picUrl: 'mruczek1.jpg',
-      vaccinated: true
+      vaccinated: true,
+      reserved: false,
+      funFact: "Hates other cats"
     },
     {
       name: 'Kiciek',
       ageMonths: 52,
       breed: 'perski',
       picUrl: 'kiciek.jpg',
-      vaccinated: true
+      vaccinated: true,
+      reserved: false,
+      funFact: "Loves dogs"
     },
     {
       name: 'Kłaczek',
       ageMonths: 81,
       breed: 'brytyjczyk',
       picUrl: 'klaczek.jpg',
-      vaccinated: false
+      vaccinated: false,
+      reserved: false,
+      funFact: "Meows all the time"
     },
     {
       name: 'Pimpuś',
       ageMonths: 6,
       breed: 'dachowiec',
       picUrl: 'pimpus.jpg',
-      vaccinated: false
+      vaccinated: false,
+      reserved: false,
+      funFact: "Loves hugs"
     }
   ];
-
 
   getCatsData(): Observable<Cat[]> {
     return of(this.allCats);
