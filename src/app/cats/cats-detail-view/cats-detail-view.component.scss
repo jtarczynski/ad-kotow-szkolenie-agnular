@@ -16,3 +16,15 @@
 img {
     margin-right: 16px;
 }
+
+.cols img {
+    height: 3vh;
+    width: 1vw;
+}
+
+.vaccinated-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Cat } from '../model';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Cat} from '../model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-cats-overview',
@@ -23,6 +23,14 @@ export class CatsOverviewComponent implements OnInit {
         this.cats = data['cats'];
       }
     );
+  }
+
+  sortByName() {
+    this.cats.sort((a, b) => a.name.localeCompare(b.name))
+  }
+
+  sortByBreed() {
+    this.cats.sort((a, b) => a.breed.localeCompare(b.breed))
   }
 
   onClick($event: Cat) {
