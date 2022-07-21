@@ -1,6 +1,12 @@
 <section>
   <div class="side-by-side">
-    <img src="./assets/cats-pic/{{cat.picUrl}}" alt="">
+    <div class="image-container">
+      <img class="cat-image" src="./assets/cats-pic/{{cat.picUrl[actualCatPickUrlPosition]}}" alt="">
+      <div class="btn-container">
+        <button class="scroll-btn" (click)="scrollImageDown()"><</button>
+        <button class="scroll-btn" (click)="scrollImageUp()">></button>
+      </div>
+    </div>
     <div class="cols">
       <span class="cats-name">{{cat.name}}</span>
       <span>{{cat.ageMonths}} miesięcy</span>

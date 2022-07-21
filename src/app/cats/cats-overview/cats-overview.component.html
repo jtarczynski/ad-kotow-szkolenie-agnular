@@ -4,7 +4,7 @@
     <div class="listElement"
          *ngFor="let cat of cats"
          [ngStyle]="{'border-color': (cat.reserved==true) ? 'red' : 'green'}">
-        <img src="./assets/cats-pic/{{cat.picUrl}}" matTooltip="{{cat.funFact}}" alt="" (click)="onClick(cat)">
+        <img src="./assets/cats-pic/{{cat.picUrl[0]}}" matTooltip="{{cat.funFact}}" alt="" (click)="onClick(cat)">
         <span>{{cat.name}}</span>
     </div>
 </section>
