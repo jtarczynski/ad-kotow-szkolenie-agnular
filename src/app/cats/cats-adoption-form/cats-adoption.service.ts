@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { AdoptionData } from '../model';
+import {CatsDataService} from "../cats-data.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatsAdoptionService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private catsDataService: CatsDataService) {
   }
 
   adopt(adoptionData: AdoptionData): void {
@@ -17,6 +18,7 @@ export class CatsAdoptionService {
     this.http.post('api/v1/adoption', adoptionData)
         .pipe(catchError(err => {
           console.log(`response: ${JSON.stringify(err, null, 2)}`);
+          this.catsDataService.getCat(adoptionData.catsName).subscribe(cat => cat.reserved = true)
           return of([]);
         }))
         .subscribe((res) => {
@@ -24,4 +26,10 @@ export class CatsAdoptionService {
           }
         );
   };
+
+
+
+
+
+
 }

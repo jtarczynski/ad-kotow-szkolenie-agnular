@@ -1,23 +1,34 @@
 <section>
-    <div class="side-by-side">
-        <img src="./assets/cats-pic/{{cat.picUrl}}" alt="">
-        <div class="cols">
-            <span class="cats-name">{{cat.name}}</span>
-            <span>{{cat.ageMonths}} miesięcy</span>
-            <span>{{cat.breed}}</span>
-        </div>
+  <div class="side-by-side">
+    <div class="image-container">
+      <img class="cat-image" src="./assets/cats-pic/{{cat.picUrl[actualCatPickUrlPosition]}}" alt="">
+      <div class="btn-container">
+        <button class="scroll-btn" (click)="scrollImageDown()"><</button>
+        <button class="scroll-btn" (click)="scrollImageUp()">></button>
+      </div>
     </div>
+    <div class="cols">
+      <span class="cats-name">{{cat.name}}</span>
+      <span>{{cat.ageMonths}} miesięcy</span>
+      <span>{{cat.breed}}</span>
+      <div class="vaccinated-container">
+        <span>Vaccinated: </span>
+        <img alt="" *ngIf="cat.vaccinated" src="../../../assets/icons/tick.jpg">
+        <img alt="" *ngIf="!cat.vaccinated" src="../../../assets/icons/cross.jpg">
+      </div>
+      <span *ngIf="cat.reserved">Reserved</span>
+      <span *ngIf="!cat.reserved">Free</span>
+    </div>
+  </div>
 
-    <button (click)="openAdoptionForm()">adoptuj</button>
-    <button routerLink="/cats">
-        <span>{{'powrót'}}</span></button>
-    <ng-container *ngIf="adoptionFormActive">
-        <app-cats-adoption-form
-                [catsName]="cat.name"
-                (closeMe)="onFormClose($event)">
-        </app-cats-adoption-form>
-    </ng-container>
-    <div *ngIf="showConfirmMsg">
-        <p>rezerwacja wysłana, będziemy się kontaktować</p>
-    </div>
+  <button (click)="openAdoptionForm()">adoptuj</button>
+  <button routerLink="/cats">
+    <span>{{'powrót'}}</span></button>
+  <ng-container *ngIf="adoptionFormActive">
+    <app-cats-adoption-form [catsName]="cat.name" (closeMe)="onFormClose($event)">
+    </app-cats-adoption-form>
+  </ng-container>
+  <div *ngIf="showConfirmMsg">
+    <p>rezerwacja wysłana, będziemy się kontaktować</p>
+  </div>
 </section>

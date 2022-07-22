@@ -1,18 +1,55 @@
-.side-by-side{
-    display: flex;
-    flex-direction: row;
+.side-by-side {
+  display: flex;
+  flex-direction: row;
 }
+
 .cols {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .cats-name {
-    font-weight: bold;
-    font-size: 16px;
-    color: darkblue;
+  font-weight: bold;
+  font-size: 16px;
+  color: darkblue;
 }
 
 img {
-    margin-right: 16px;
+  margin-right: 16px;
+}
+
+.cols img {
+  height: 3vh;
+  width: 1vw;
+}
+
+.vaccinated-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn {
+  font-size: 2vw;
+  font-weight: 600;
+
+}
+
+.cat-image {
+  width: 35vw;
+  height: 80vh;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  margin-left: 0.5vw;
+  width: 35vw;
 }
