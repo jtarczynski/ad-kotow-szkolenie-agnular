@@ -10,7 +10,7 @@ import { CatsAdoptionFormComponent } from './cats/cats-adoption-form/cats-adopti
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
-import {MatTooltipModule} from "@angular/material/tooltip";
+import {TooltipModule} from "ng2-tooltip-directive";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import 'hammerjs';
 
@@ -23,8 +23,8 @@ import 'hammerjs';
     HttpClientModule,
     MatButtonToggleModule,
     MatButtonModule,
-    MatTooltipModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TooltipModule
   ],
   declarations: [
     AppComponent,

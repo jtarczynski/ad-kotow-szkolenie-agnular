@@ -1,10 +1,10 @@
 <section>
-    <button id="name-sort-btn" (click)="sortByName()">Sort by name</button>
-    <button id="breed-sort-btn" (click)="sortByBreed()">Sort by breed</button>
-    <div class="listElement"
-         *ngFor="let cat of cats"
-         [ngStyle]="{'border-color': (cat.reserved==true) ? 'red' : 'green'}">
-        <img src="./assets/cats-pic/{{cat.picUrl[0]}}" matTooltip="{{cat.funFact}}" alt="" (click)="onClick(cat)">
-        <span>{{cat.name}}</span>
-    </div>
+  <button id="name-sort-btn" (click)="sortByName()">Sort by name</button>
+  <button id="breed-sort-btn" (click)="sortByBreed()">Sort by breed</button>
+  <div class="listElement"
+       *ngFor="let cat of cats"
+       [ngStyle]="{'border-color': (cat.reserved==true) ? 'red' : 'green'}">
+    <img src="./assets/cats-pic/{{cat.picUrl[0]}}" tooltip="{{cat.funFact}}" alt="" (click)="onClick(cat)">
+    <span>{{cat.name}}</span>
+  </div>
 </section>
